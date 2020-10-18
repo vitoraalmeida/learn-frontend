@@ -1,0 +1,35 @@
+@keyframes up {
+    from {
+        /* inicialmente, define a opacidade 0 (invisivel) */
+        opacity: 0;
+        /* posição iniciao 16px a partir do y = 0 (parte superior = 0)) */
+        transform: translateY(16px);
+    }
+
+    to {
+        /* aparece */
+        opacity: 1;
+        /* sai de 16px para 0 no eixo y */
+        transform: translateY(0);
+    }
+}
+
+@keyframes right {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animate-up {
+    animation-name: up;
+    animation-duration: 300ms;
+    animation-fill-mode: backwards;
+}
+
+.animate-right {
+    animation-name: right;
+    animation-duration: 300ms;
+}

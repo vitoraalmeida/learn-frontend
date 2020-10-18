@@ -1,0 +1,47 @@
+/*
+ * ordem de precedência:
+ *  - !important
+ *  - css inline
+ *  - link stylesheet
+ *  - tag style no html
+ *  - ultima tag declarada (cascade stylesheet)
+ *  - seletor de id
+*/
+
+/* '*' - seletor universal. como vem primeiro, é aplicado primeiro */
+/* define a estilização universal inical da pagina. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* vh = viewport height: a pagina é dividida em 100 cortes de mesmo tamanho
+     * baseados no tamanho atual da pagina. usar vh significa escolhar quantos 
+     * desses cortes usar para o elemento em questão */
+    height: 100vh;
+    color: white;
+}
+
+:root {
+    /* vai definir qual o tamanho da fonte do elemento raiz da pagina.
+     * base do 'rem' */
+    font-size: 62.5%; /* padrão 16px - 62.5% de 16 = 10px */
+}
+
+body, input, button, textarea {
+    font-size: 1.8rem; /* 1.8 x 10px (root) */
+    line-height: 1;
+    font-weight: 400;
+    font-family: 'Nunito', sans-serif;
+    /* font: 400 18px/1 'Nunito', sans-serif; */
+    /* unidades de medida:
+       em - baseado no tamanho do elemento (pai) anterior do elemetno em questão
+       rem - baseado no tamanho do elemento html/root/raiz
+       por padrão a fonte do navegador tem 16px de tamanho
+    */
+}
+
+
+

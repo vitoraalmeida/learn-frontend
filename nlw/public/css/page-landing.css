@@ -1,0 +1,126 @@
+/* mobile first */
+#page-landing {
+    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+
+    text-align: center;
+    min-height: 100vh;
+
+    display: flex; /* aplicado para os elementos contidos no proprio elemento*/
+    /* flex, por padrão, posiciona os elementos numa orientação horizontal (row)
+     * com os elementos ocupando todo o espaço um ao lado do outro, se puder 
+     * o align-items, se a orientação for a padrão, define o alinhamento vertical*/
+}
+
+#container {
+    /* min() busca o que for menor entre as opções) */
+    width: min(90%, 112rem); /* largura maxima ocupada */
+    /* container é interior a #page-landing, o display flex se aplica a ele
+     * a margem aplicada é em relação ao bloco do #page-landing */
+    margin: auto;
+}
+
+.location, h1, .visit p {
+    height: 16vh;
+}
+
+#logo {
+    animation-delay: 50ms;
+}
+
+
+.location {
+    animation-delay: 100ms; 
+}
+
+main h1 {
+    animation-delay: 150ms;
+    /* fonte varia com o tamanho da tela */
+    font-size: clamp(4rem, 6vw, 8.4rem);
+}
+
+.visit p {
+    animation-delay: 200ms;
+}
+
+.visit a {
+    width: 8rem;
+    height: 8rem;
+    background: #ffd666;
+
+    border: none;
+    border-radius: 3rem;
+
+    /* margem relativa ao elemento pai #container (flex) */
+    margin: auto;
+
+    /* flex define o display interno a .visit. */
+    display: flex;
+    align-items: center;
+    /* se for a orientação padrão, o justify é aplicado horizontalmente */
+    justify-content: center;
+
+    /* para aplicar a transição do background hover */
+    transition: background 200ms;
+    
+    /* animaçao */
+    animation-delay: 400ms;
+}
+
+.visit a:hover {
+    background: #96feff;
+}
+
+
+/* versão desktop */
+@media (min-width: 760px) {
+    #container {
+        padding: 5rem 2rem;
+        /* shorthand background: image repeat position / size */
+        background: url("../images/bg.svg") no-repeat 80% / clamp(30rem, 54vw, 56rem);
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .location, h1, .visit p {
+        height: initial;
+        text-align: initial;
+    }
+
+    .location {
+        text-align: right;
+        font-size: 2.4rem;
+        line-height: 1.5;
+    }
+
+    main h1 {
+        font-weight: bold;
+        line-height: .88;
+
+        /*         top        left/right bottom*/             
+        margin: clamp(10%, 9vh, 12%) 0 4rem;
+        /* vivewport width = pedaços da tela que é vista */
+        /* permite que a fonte mude de tamanho acompanhando o tamanho da tela */
+        /*               min        max   */
+        width: min(300px, 80%);
+    }
+
+    .visit {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .visit p {
+        font-size: 2.4rem;
+        line-height: 1.5;
+        width: clamp(20rem, 20vw, 30rem);
+    }
+
+    .visit a {
+        margin: initial;
+    }
+}
